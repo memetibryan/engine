@@ -17,13 +17,15 @@ app.use(bodyparser.urlencoded({extended: true}))
 
 //set view enigne
 app.set("view engine","ejs")
-app.set("views", path.resolve(__dirname,"views/ejs"))
+//app.set("views", path.resolve(__dirname,"views/ejs"))
 
 //load assets
 app.use('/css',express.static(path.resolve(__dirname,"assets/css")))
 app.use('/img',express.static(path.resolve(__dirname,"assets/img")))
 app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
 
-app.get('/', (req, res) => res.send('Engine Application'))
+app.get('/',(req,res) =>{
+  res.render('index');
+})
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
