@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 exports.homeRoutes = (req,res)=>{
   res.render('index');
 }
@@ -11,5 +13,12 @@ exports.hospital = (req,res) =>{
 }
 
 exports.new_user = (req,res) =>{
-  res.render('new_user');
-}
+  //mage a get request
+  axios.get('http://localhost:3000/api/users')
+    .then(function(response){
+      res.render('new_user',(users.response.data));
+    })
+    .catch(err=>{
+      res.send(err);
+    })
+  }
