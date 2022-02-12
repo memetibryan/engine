@@ -1,26 +1,20 @@
 <%- include('include/_header')%>
 
 <div id="main">
-    <div class="left-column">
-      <form method="post">
+      <form action="/" method="POST">
         <label for="fname">NAME(S) :</label>
         <input type="text" required="Yes" id="fname">
         <br><br>
         <label for="lname">BLOOD TYPE :</label>
         <input type="text" required="Yes" id="type">
         <br><br>
-      </form>
-    </div>
-    <div class="right-column">
-      <form>
         <label for="flocation">LOCATION :</label>
         <input type="text" required="Yes" id="flocation">
         <br><br>
         <label for="lname">TEL. NUMBER :</label>
         <input type="number" required="Yes" id="tel">
-        <br>
+        <br><br>
       </form>
-    </div>
   </div>
 
   <button id="myBtn" type="button">SIGN UP</button>
