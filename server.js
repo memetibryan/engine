@@ -24,8 +24,15 @@ app.use('/css',express.static(path.resolve(__dirname,"assets/css")))
 app.use('/img',express.static(path.resolve(__dirname,"assets/img")))
 app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
 
+//routing
 app.get('/',(req,res) =>{
   res.render('index');
+})
+app.get('/user',(req,res) =>{
+  res.render('user');
+})
+app.get('/hospital',(req,res) =>{
+  res.render('hospital');
 })
 
 app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
