@@ -9,3 +9,7 @@ exports.user = (req,res) =>{
 exports.hospital = (req,res) =>{
   res.render('hospital');
 }
+
+exports.new_user = (req,res) =>{
+  res.render('new_user');
+}
