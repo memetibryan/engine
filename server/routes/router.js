@@ -2,7 +2,8 @@ const express = require('express')
 const route = express.Router()
 
 const services = require('../services/render');
-const controller = require('../controller/controller');
+const controlleruser = require('../controller/user');
+const controllerhospital = require('../controller/hospital');
 
 //routing
 route.get('/',services.homeRoutes);
@@ -15,10 +16,12 @@ route.get('/new_user',services.new_user);
 
 route.get('/new_hospital',services.new_hospital);
 
-//API
-route.post('/api/users',controller.create);
-route.get('/api/users',controller.find);
-route.post('/api/hospitals',controller.create);
-route.get('/api/hospitals',controller.find);
+//USER API
+route.post('/api/users',controlleruser.create);
+route.get('/api/users',controlleruser.find);
+
+//HOSPITAL API
+route.post('/api/hospitals',controllerhospital.create);
+route.get('/api/hospitals',controllerhospital.find);
 
 module.exports = route
