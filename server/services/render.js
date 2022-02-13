@@ -25,3 +25,17 @@ exports.new_user = (req,res) =>{
       res.send(err);
     })
   }
+
+  exports.new_hospital = (req,res) =>{
+    // res.render('new_hospital');
+
+    //mage a get request
+    axios.get('http://localhost:3000/api/hospitals')
+      .then(function(response){
+        console.log(response)
+        res.render('new_hospital',{hospitals:response.data});
+      })
+      .catch(err=>{
+        res.send(err);
+      })
+    }
