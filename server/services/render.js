@@ -16,7 +16,8 @@ exports.new_user = (req,res) =>{
   //mage a get request
   axios.get('http://localhost:3000/api/users')
     .then(function(response){
-      res.render('new_user',(users.response.data));
+      console.log(response)
+      res.render('new_user',{users:response.data});
     })
     .catch(err=>{
       res.send(err);
