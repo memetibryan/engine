@@ -2,23 +2,23 @@ const mongoose = require('mongoose')
 
 //user model
 var schema = new mongoose.Schema({
-  name:{
+  name: {
     type: String,
     require: true
   },
-  type:{
+  type: {
     type: String,
     require: true
   },
-  location:{
+  location: {
     type: String,
     require: true
   },
-  telephone:{
+  telephone: {
     type: Number,
     unique: true
   }
 })
 
-const Userdb = mongoose.model('userdb',schema);
+const Userdb = mongoose.model('userdb', schema);
 module.exports = Userdb

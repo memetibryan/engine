@@ -1,13 +1,14 @@
 <%- include('include/_header')%>
 
 <% for(var i=0;i<users.length;i++){%>
-  <tr>
-    <td><%= i+1 %></td>
-    <td><%= users[i].name %></td>
-    <td><%= users[i].type %></td>
-    <td><%= users[i].location %></td>
-    <td><%= users[i].telephone %></td><hr>
-  </tr>
+<tr>
+  <td><%= i+1 %></td>
+  <td><%= users[i].name %></td>
+  <td><%= users[i].type %></td>
+  <td><%= users[i].location %></td>
+  <td><%= users[i].telephone %></td>
+  <hr>
+</tr>
 <%}%>
 <a href="/">HOME</a>
 

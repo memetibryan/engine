@@ -1,13 +1,14 @@
 <%- include('include/_header')%>
 
 <% for(var i=0;i<hospitals.length;i++){%>
-  <tr>
-    <td><%= i+1 %></td>
-    <td><%= hospitals[i].name %></td>
-    <td><%= hospitals[i].date %></td>
-    <td><%= hospitals[i].location %></td>
-    <td><%= hospitals[i].telephone %></td><hr>
-  </tr>
+<tr>
+  <td><%= i+1 %></td>
+  <td><%= hospitals[i].name %></td>
+  <td><%= hospitals[i].date %></td>
+  <td><%= hospitals[i].location %></td>
+  <td><%= hospitals[i].telephone %></td>
+  <hr>
+</tr>
 <%}%>
 <a href="/">HOME</a>
 

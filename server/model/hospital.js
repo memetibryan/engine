@@ -2,23 +2,23 @@ const mongoose = require('mongoose')
 
 //hospitals model
 var schemaa = new mongoose.Schema({
-  name:{
+  name: {
     type: String,
     require: true
   },
-  location:{
+  location: {
     type: String,
     require: true
   },
-  date:{
+  date: {
     type: Date,
     require: true
   },
-  telephone:{
+  telephone: {
     type: Number,
     unique: true
   }
 })
 
-const Hospitaldb = mongoose.model('hospitaldb',schemaa);
+const Hospitaldb = mongoose.model('hospitaldb', schemaa);
 module.exports = Hospitaldb
