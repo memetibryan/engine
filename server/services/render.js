@@ -13,6 +13,8 @@ exports.hospital = (req,res) =>{
 }
 
 exports.new_user = (req,res) =>{
+  // res.render('new_user');
+
   //mage a get request
   axios.get('http://localhost:3000/api/users')
     .then(function(response){

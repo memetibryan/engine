@@ -127,3 +127,20 @@ p{
   text-decoration: none;
   cursor: pointer;
 }
+
+table{
+  border-spacing: 0px;
+  width: 100%;
+}
+
+.table td,
+.table th{
+  padding: 75em;
+  vertical-align: top;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.table tr:hover{
+  background-color: green;
+}
