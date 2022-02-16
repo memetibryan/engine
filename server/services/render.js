@@ -12,10 +12,6 @@ exports.hospital = (req, res) => {
   res.render('hospital');
 }
 
-exports.donor = (req, res) => {
-  res.render('donor');
-}
-
 exports.new_user = (req, res) => {
   // res.render('new_user');
 
@@ -46,4 +42,18 @@ exports.new_hospital = (req, res) => {
     .catch(err => {
       res.send(err);
     })
+}
+
+exports.donor = (req, res) => {
+  // res.render('donor');
+  axios.get('http://localhost:3000/api/hospitals', {params: {id:req.query.id}})
+  .then(function (userdata) {
+    console.log(response)
+    res.render('new_hospital', {
+      donors: userdata.data
+    });
+  })
+  .catch(err => {
+    res.send(err);
+  })
 }
