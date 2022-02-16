@@ -12,6 +12,10 @@ exports.hospital = (req, res) => {
   res.render('hospital');
 }
 
+exports.donor = (req, res) => {
+  res.render('donor');
+}
+
 exports.new_user = (req, res) => {
   // res.render('new_user');
 

@@ -9,7 +9,7 @@ const path = require('path')
 const connectDB = require('./server/database/connection')
 
 dotenv.config({path:'config.env'})
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8000
 
 //log request
 app.use(morgan('tiny'));
@@ -33,4 +33,4 @@ app.use('/js',express.static(path.resolve(__dirname,"assets/js")))
 app.use('/',require('./server/routes/router'))
 
 //console display
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`))
+app.listen(PORT, () => console.log(`Example app is listening on port ${PORT}!`))
