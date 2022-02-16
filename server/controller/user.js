@@ -32,14 +32,35 @@ exports.create = (req, res) => {
 
 //retrieve and return all users
 exports.find = (req, res) => {
-  Userdb.find()
-    .then(user => {
-      res.send(user)
-      // res.redirect('/user')
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: err.message || "Some error occured while retrieving the information!"
+
+  //retrieve multiple users based on location
+  if(req.query.id){
+
+    const id = req.query.id;
+
+    Userdb.findById(id)
+      .then(data => {
+        if(!data){
+          res.status(404).send({message: "No Record of a Donor from" + id})
+        }else{
+          res.send(data)
+        }
+      })
+      .catch(err => {
+        res.status(500).send({message: "Error fetching Donors from" + id})
+      })
+
+  }else{
+    //retrieve all users in the database
+    Userdb.find()
+      .then(user => {
+        res.send(user)
+        // res.redirect('/user')
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: err.message || "Some error occured while retrieving the information!"
+        });
       });
-    });
+  }
 }
