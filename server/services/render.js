@@ -44,13 +44,29 @@ exports.new_hospital = (req, res) => {
     })
 }
 
-exports.donor = (req, res) => {
-  // res.render('donor');
-  axios.get('http://localhost:3000/api/hospitals', {params: {id:req.query.id}})
-  .then(function (userdata) {
-    console.log(response)
-    res.render('new_hospital', {
-      donors: userdata.data
+exports.donorspage = (req, res) => {
+  // res.render('donorspage');
+  //mage a get request
+  axios.get('http://localhost:3000/api/users')
+    .then(function (response) {
+      // console.log(response)
+      res.render('donorspage', {
+        donors: response.data
+      });
+    })
+    .catch(err => {
+      res.send(err);
+    })
+}
+
+exports.donors = (req, res) => {
+  // res.render('donors');
+
+  axios.get('http://localhost:3000/api/users/', {params: {id:req.query.id}})
+  .then(function (donordata) {
+    console.log(donordata)
+    res.render('donors', {
+      donorsData: donordata.data
     });
   })
   .catch(err => {

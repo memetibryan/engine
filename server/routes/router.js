@@ -16,7 +16,9 @@ route.get('/new_user',services.new_user);
 
 route.get('/new_hospital',services.new_hospital);
 
-route.get('/donor',services.donor);
+route.get('/donorspage',services.donorspage);
+
+route.get('/donors',services.donors)
 
 //USER API
 route.post('/api/users',controlleruser.create);

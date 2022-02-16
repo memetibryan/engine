@@ -1,0 +1,15 @@
+<%- include('include/_header')%>
+
+<% for(var i=0;i<donorsData.length;i++){%>
+<tr>
+  <td><%= i+1 %></td>
+  <td><%= donorsData[i].name %></td>
+  <td><%= donorsData[i].type %></td>
+  <td><%= donorsData[i].location %></td>
+  <td><%= donorsData[i].telephone %></td>
+  <hr>
+</tr>
+<%}%>
+<a href="/">HOME</a><br><br>
+
+<%- include('include/_footer')%>
