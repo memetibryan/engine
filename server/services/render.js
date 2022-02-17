@@ -66,7 +66,7 @@ exports.donors = (req, res) => {
   .then(function (donordata) {
     console.log(donordata)
     res.render('donors', {
-      donorsData: donordata.data
+      donorsdata: donordata.data
     });
   })
   .catch(err => {

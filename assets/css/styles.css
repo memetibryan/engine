@@ -1,17 +1,15 @@
 #main{
   width:50%;
-  height:130vh;
+  height:25vh;
   background-color: white;
 }
 .left-column{
   float:left;
   width: 150%;
-  padding-left:100%;
 }
 .right-column{
   float:right;
   width: 50%;
-  padding-left: 5%;
 }
 
 body {
@@ -19,9 +17,7 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
 }
-hr {
-  border-color:green;
-}
+
 button {
   background-color: #00FF00; /* Green */
   border: none;
@@ -29,7 +25,6 @@ button {
   padding: 70px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
@@ -79,14 +74,14 @@ p{
 }
 
 table{
-  border-spacing: 0px;
-  width: 100%;
+  border-spacing: 100px;
+  width:10%;
 }
 
 .table td,
 .table th{
   padding: 75em;
   vertical-align: top;
-  text-align: center;
-  border-top: 1px solid var(--border);
+  text-align: align;
+  border-top:100px;solid
 }
