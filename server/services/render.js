@@ -82,11 +82,30 @@ exports.donorspage = (req, res) => {
 exports.donors = (req, res) => {
   // res.render('donors');
 
-  axios.get('http://localhost:3000/api/users/', {params: {id:req.query.id}})
+  axios.get('http://localhost:3000/api/users/', {params: {
+    id:req.query.id
+  }})
   .then(function (donordata) {
     console.log(donordata)
     res.render('donors', {
       donorsdata: donordata.data
+    });
+  })
+  .catch(err => {
+    res.send(err);
+  })
+}
+
+exports.patientdonors = (req, res) => {
+  // res.render('donors');
+
+  axios.get('http://localhost:3000/api/users/', {params: {
+    id:req.query.id
+  }})
+  .then(function (patientdata) {
+    console.log(patientdata)
+    res.render('patientdonors', {
+      patientsdata: patientdata.data
     });
   })
   .catch(err => {

@@ -32,14 +32,33 @@ exports.create = (req, res) => {
 }
 
 exports.find = (req, res) => {
-  Patientdb.find()
-    .then(patient => {
-      res.send(patient)
-      // res.redirect('/patient')
-    })
-    .catch(err => {
-      res.status(500).send({
-        message: err.message || "Some error occured while retrieving the information!"
+  if(req.query.id){
+
+    const id = req.query.id
+
+    Userdb.findById(id)
+      .then(data => {
+        if(!data){
+          res.status(404).send({message: "No Record of a Donor from" + id})
+        }else{
+          res.send(data)
+        }
+      })
+      .catch(err => {
+        res.status(500).send({message: "Error fetching Donors from" + id})
+      })
+
+  }else{
+    //retrieve all users in the database
+    Patientdb.find()
+      .then(patient => {
+        res.send(patient)
+        // res.redirect('/user')
+      })
+      .catch(err => {
+        res.status(500).send({
+          message: err.message || "Some error occured while retrieving the information!"
+        });
       });
-    });
+  }
 }

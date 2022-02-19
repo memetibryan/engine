@@ -1,0 +1,19 @@
+<%- include('include/_header')%>
+
+  <% for(var i=0;i<patientsdata.length;i++){%>
+
+    <tr>
+      <td><%= i+1 %></td>
+      <td><%= patientsdata[i].name %></td>
+      <td><%= patientsdata[i].type %></td>
+      <td><%= patientsdata[i].location %></td>
+      <td><%= patientsdata[i].telephone %></td>
+      <hr>
+    </tr>
+
+  <%}%>
+
+<a href="/new_patient">BACK</a><br><br>
+<a href="/">HOME</a><br><br>
+
+<%- include('include/_footer')%>

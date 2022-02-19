@@ -26,6 +26,8 @@ route.get('/donorspage',services.donorspage);
 
 route.get('/donors',services.donors);
 
+route.get('/patientdonors',services.patientdonors);
+
 //USER API
 route.post('/api/users',controlleruser.create);
 route.get('/api/users',controlleruser.find);

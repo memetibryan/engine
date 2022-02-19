@@ -7,9 +7,11 @@
   <td><%= patients[i].type %></td>
   <td><%= patients[i].location %></td>
   <td><%= patients[i].telephone %></td>
+  <a href="/patientdonors?location=<%= patients[i].location %>">SEARCH DONORS</a>
   <hr>
 </tr>
 <%}%>
+
 <a href="/patient">BACK</a><br><br>
 <a href="/">HOME</a><br><br>
 

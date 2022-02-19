@@ -7,3 +7,8 @@ $('#new_user').submit(function(event){
 $('#new_hospital').submit(function(event){
   alert("Your Data Has Been Saved Successfully!");
 })
+
+//message box for patient form
+$('#new_patient').submit(function(event){
+  alert("Your Data Has Been Saved Successfully!");
+})
