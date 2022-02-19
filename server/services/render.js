@@ -12,10 +12,14 @@ exports.hospital = (req, res) => {
   res.render('hospital');
 }
 
+exports.patient = (req, res) => {
+  res.render('patient');
+}
+
 exports.new_user = (req, res) => {
   // res.render('new_user');
 
-  //mage a get request
+  //make a get request
   axios.get('http://localhost:3000/api/users')
     .then(function (response) {
       console.log(response)
@@ -31,7 +35,7 @@ exports.new_user = (req, res) => {
 exports.new_hospital = (req, res) => {
   // res.render('new_hospital');
 
-  //mage a get request
+  //make a get request
   axios.get('http://localhost:3000/api/hospitals')
     .then(function (response) {
       console.log(response)
@@ -44,9 +48,25 @@ exports.new_hospital = (req, res) => {
     })
 }
 
+exports.new_patient = (req, res) => {
+  // res.render('new_patient');
+
+  //make a get request
+  axios.get('http://localhost:3000/api/patients')
+    .then(function (fetcheddata) {
+      console.log(fetcheddata)
+      res.render('new_patient', {
+        patients: fetcheddata.data
+      });
+    })
+    .catch(err => {
+      res.send(err);
+    })
+}
+
 exports.donorspage = (req, res) => {
   // res.render('donorspage');
-  //mage a get request
+  //make a get request
   axios.get('http://localhost:3000/api/users')
     .then(function (response) {
       // console.log(response)

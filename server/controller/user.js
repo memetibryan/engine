@@ -33,10 +33,10 @@ exports.create = (req, res) => {
 //retrieve and return all users
 exports.find = (req, res) => {
 
-  //retrieve multiple users based on location
+  //retrieve single users based on location
   if(req.query.id){
 
-    const id = req.query.id;
+    const id = req.query.id
 
     Userdb.findById(id)
       .then(data => {
