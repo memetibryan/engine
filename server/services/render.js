@@ -53,10 +53,10 @@ exports.new_patient = (req, res) => {
 
   //make a get request
   axios.get('http://localhost:3000/api/patients')
-    .then(function (fetcheddata) {
-      console.log(fetcheddata)
+    .then(function (response) {
+      console.log(response)
       res.render('new_patient', {
-        patients: fetcheddata.data
+        patients: response.data
       });
     })
     .catch(err => {

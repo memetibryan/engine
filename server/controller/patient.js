@@ -10,10 +10,10 @@ exports.create = (req, res) => {
   }
   //new patient
   const patient = new Patientdb({
-    name: req.body.name,
-    type: req.body.type,
-    location: req.body.location,
-    telephone: req.body.telephone
+    name: req.body.yname,
+    type: req.body.ytype,
+    location: req.body.ylocation,
+    telephone: req.body.ytelephone
   })
 
   //save patient
@@ -21,7 +21,7 @@ exports.create = (req, res) => {
     .save(patient)
     .then(data => {
       // res.send(data)
-      res.redirect('/new_patient')
+      res.redirect('/donorspage')
     })
     .catch(err => {
       res.status(500).send({
@@ -29,19 +29,3 @@ exports.create = (req, res) => {
       });
     });
 }
-
-//retrieve and return all patients
-exports.find = (req, res) => {
-
-    //retrieve all patients in the database
-    patientdb.find()
-      .then(patient => {
-        res.send(patient)
-        // res.redirect('/patient')
-      })
-      .catch(err => {
-        res.status(500).send({
-          message: err.message || "Some error occured while retrieving the information!"
-        });
-      });
-  }

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 //user model
-var schema = new mongoose.Schema({
+var sschema = new mongoose.Schema({
   name: {
     type: String,
     require: true
@@ -20,5 +20,5 @@ var schema = new mongoose.Schema({
   }
 })
 
-const Patientdb = mongoose.model('patientdb', schema);
+const Patientdb = mongoose.model('patientdb', sschema);
 module.exports = Patientdb
