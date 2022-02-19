@@ -24,7 +24,7 @@ route.get('/new_hospital',services.new_hospital);
 
 route.get('/donorspage',services.donorspage);
 
-route.get('/donors',services.donors)
+route.get('/donors',services.donors);
 
 //USER API
 route.post('/api/users',controlleruser.create);
@@ -36,6 +36,6 @@ route.get('/api/hospitals',controllerhospital.find);
 
 //PATIENT API
 route.post('/api/patients',controllerpatient.create);
-
+route.get('/api/patients',controllerpatient.find);
 
 module.exports = route

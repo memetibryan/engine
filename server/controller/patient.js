@@ -8,6 +8,7 @@ exports.create = (req, res) => {
     });
     return;
   }
+
   //new patient
   const patient = new Patientdb({
     name: req.body.yname,
@@ -21,11 +22,24 @@ exports.create = (req, res) => {
     .save(patient)
     .then(data => {
       // res.send(data)
-      res.redirect('/donorspage')
+      res.redirect('/new_patient')
     })
     .catch(err => {
       res.status(500).send({
         message: err.message || "Some error occured while creating new patient"
+      });
+    });
+}
+
+exports.find = (req, res) => {
+  Patientdb.find()
+    .then(patient => {
+      res.send(patient)
+      // res.redirect('/patient')
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || "Some error occured while retrieving the information!"
       });
     });
 }

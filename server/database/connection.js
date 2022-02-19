@@ -7,7 +7,7 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true
     })
-    console.log('WELCOME, MONGODB CONNECTED SUCCESSFULLY...............');
+    console.log('MONGO DATABASE CONNECTED SUCCESSFULLY...............');
   } catch (err) {
     console.log(err);
     connection.exit(1);
