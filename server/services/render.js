@@ -99,7 +99,7 @@ exports.donors = (req, res) => {
 exports.patientdonors = (req, res) => {
   // res.render('donors');
 
-  axios.get('http://localhost:3000/api/users/', {params: {
+  axios.get('http://localhost:3000/api/users/location/', {params: {
     id:req.query.id
   }})
   .then(function (patientdata) {

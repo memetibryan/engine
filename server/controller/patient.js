@@ -1,4 +1,5 @@
 var Patientdb = require('../model/patient')
+var Userdb = require('../model/user')
 
 //create and save new patient
 exports.create = (req, res) => {
@@ -34,18 +35,18 @@ exports.create = (req, res) => {
 exports.find = (req, res) => {
   if(req.query.id){
 
-    const id = req.query.id
+    const location = req.query.id
 
-    Userdb.findById(id)
+    Userdb.findById(location)
       .then(data => {
         if(!data){
-          res.status(404).send({message: "No Record of a Donor from" + id})
-        }else{
+          res.status(404).send({message: "No Record of a Donor from" + location})
+        }else if (data.location = "voi"){
           res.send(data)
         }
       })
       .catch(err => {
-        res.status(500).send({message: "Error fetching Donors from" + id})
+        res.status(500).send({message: "Error fetching Donors from" + location})
       })
 
   }else{

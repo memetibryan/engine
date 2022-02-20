@@ -36,6 +36,9 @@ route.get('/api/users',controlleruser.find);
 route.post('/api/hospitals',controllerhospital.create);
 route.get('/api/hospitals',controllerhospital.find);
 
+//Location Fetching API
+route.get('/api/users/location',controlleruser.find);
+
 //PATIENT API
 route.post('/api/patients',controllerpatient.create);
 route.get('/api/patients',controllerpatient.find);
